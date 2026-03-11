@@ -173,6 +173,42 @@
             0% { transform: scale(1) translateY(0); }
             100% { transform: scale(1.02) translateY(-10px); }
         }
+		/* Container for the banner */
+		.scrolling-banner {
+		  background-color: #d32f2f; /* A nice attention-grabbing red */
+		  color: #ffffff;            /* White text */
+		  padding: 10px 0;
+		  overflow: hidden;          /* Hides the text when it goes off-screen */
+		  white-space: nowrap;       /* Keeps the text on a single line */
+		  width: 100%;
+		  box-sizing: border-box;
+		}
+
+		/* The text that will be animated */
+		.scrolling-text {
+		  display: inline-block;
+		  padding-left: 100%;        /* Pushes the text off the right side of the screen to start */
+		  animation: scroll-left 8s linear infinite; /* 15s is the speed */
+		  font-family: Arial, sans-serif;
+		  font-size: 16px;
+		  font-weight: bold;
+		  letter-spacing: 1px;
+		}
+
+		/* The animation keyframes */
+		@keyframes scroll-left {
+		  0% {
+			transform: translateX(0);
+		  }
+		  100% {
+			transform: translateX(-100%);
+		  }
+		}
+
+		/* Optional: Pause the scrolling when a user hovers over it */
+		.scrolling-banner:hover .scrolling-text {
+		  animation-play-state: paused;
+		}
         
     </style>
 </head>
@@ -270,6 +306,11 @@
 						<i class="fa-solid fa-hand-point-up text-lg md:text-xl"></i>
 						<span>CLICK HERE</span>
 						<i class="fa-solid fa-hand-point-up text-lg md:text-xl"></i>
+					</div>
+					<div class="scrolling-banner">
+					  <div class="scrolling-text">
+						Seats are filling fast, book yours today!
+					  </div>
 					</div>
 
 				</div>
@@ -563,4 +604,5 @@
     </script>
 </body>
 </html>
+
 
